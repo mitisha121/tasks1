@@ -35,6 +35,8 @@ defmodule Tasks1.Accounts do
       ** (Ecto.NoResultsError)
 
   """
+  def get_user(id), do: Repo.get(User, id)
+
   def get_user!(id), do: Repo.get!(User, id)
 
   def get_user_by_name(name) do
