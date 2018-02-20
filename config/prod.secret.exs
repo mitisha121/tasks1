@@ -14,7 +14,7 @@ config :tasks1, Tasks1Web.Endpoint,
 # Configure your database
 config :tasks1, Tasks1.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "tasktracker",
+  password: "1rn13cs046",
   database: "tasks1_prod",
   pool_size: 15
