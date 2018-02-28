@@ -1,3 +1,10 @@
+Design:
+A user can only assign himself as manager of other users.
+A user cannot make himself as managee.
+A user can only assign tasks to those he manages
+
+
+
 # Tasks1
 
 To start your Phoenix server:
