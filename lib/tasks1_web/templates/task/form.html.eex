@@ -24,11 +24,7 @@
     <%= error_tag f, :assignedTo_id %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :completed, class: "control-label" %>
-    <%= checkbox f, :completed, class: "checkbox" %>
-    <%= error_tag f, :completed %>
-  </div>
+  
 
   <div class="form-group">
     <%= label f, :time, class: "control-label" %>
