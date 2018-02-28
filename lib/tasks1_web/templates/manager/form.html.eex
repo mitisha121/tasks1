@@ -1,0 +1,23 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+   <div class="form-group">
+    <%= label f, :manager_id, class: "control-label" %>
+    <%= select f, :manager_id, Enum.map(Tasks1.Accounts.current(@current_user.id), &{&1.name, &1.id}), class: "form-control" %>
+    <%= error_tag f, :manager_id %>
+  </div>
+
+   <div class="form-group">
+    <%= label f, :managee_id, class: "control-label" %>
+    <%= select f, :managee_id, Enum.map(Tasks1.Accounts.not_current(@current_user.id), &{&1.name, &1.id}), class: "form-control" %> <!-- , Enum.map(Tasks1.Accounts.no_manager(@current_user.id)),  -->
+    <%= error_tag f, :managee_id %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

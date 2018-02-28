@@ -1,0 +1,46 @@
+<%= if @current_user do %>
+  <div class="row">
+    <div class="col">
+      <%= render Tasks1Web.ManagerView, "form.html",
+          Map.put(assigns, :action, manager_path(@conn, :create)) %>
+    </div>
+  </div>
+<% end %>
+
+<h2> Manager of <%= @current_user.name %> </h2>
+<%= for manager <- @managerr do %>
+<p> <%= manager.manager.name %> </p>
+<% end %>
+
+<h2> Managed by <%= @current_user.name %> </h2>
+<%= for managee <- @managees do %>
+
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <p> <b> User: </b> <%= managee.managee.name %>  </p>
+        <p> <b> Id: </b> <%= managee.managee.id %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Desc</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%= for task <- Tasks1.Social.get_task_user(managee.managee.id) do %>
+            
+                <td> <%= task.title %> </td>
+                <td> <%= task.desc %> </td>
+                <td> <%= task.completed %> </td>
+            
+                <% end %>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -11,6 +11,9 @@ defmodule Tasks1.Social.Task do
     field :title, :string, null: false
     belongs_to :assignedTo, Tasks1.Accounts.User
 
+    has_many :timer_timeblocks, Timeblock, foreign_key: :timer_id
+    
+
     timestamps()
   end
 

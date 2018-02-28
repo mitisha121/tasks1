@@ -15,14 +15,23 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-3 offset-9">
+       
           <%= if @current_user do %>
-            <p> 
-              Logged in as:  <%= @current_user.name %> 
-              <%= link "Logout", to: "/session", method: :delete %>
-            </p>
+            <div class="col-9">
+              <p class="p-4">
+                <a href="/feed"> Feed </a>
+                <a href="/users"> All users </a>
+                <%= link "Manage", to: page_path(@conn, :manage) %>
+              </p>
+            </div>
+             <div class="col-3">
+              <p> 
+                Logged in as:  <%= @current_user.name %> 
+                <%= link "Logout", to: "/session", method: :delete %>
+              </p>
+            </div>
             <%= end %>
-        </div>
+        
       </div>
 
 

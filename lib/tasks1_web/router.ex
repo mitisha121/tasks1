@@ -19,21 +19,29 @@ defmodule Tasks1Web.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  
   end
 
   scope "/", Tasks1Web do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/manage", PageController, :manage
     get "/feed", PageController, :feed
 
     resources "/users", UserController
     resources "/tasks", TaskController
+    resources "/managers", ManagerController
     
     post "/session", SessionController, :create
     delete "/session", SessionController, :delete
   end
 
+  scope "/api/v1", Tasks1Web do
+    pipe_through :api
+    resources "/timeblocks", TimeblockController, except: [:new, :edit]
+  end
+  
   # Other scopes may use custom stacks.
   # scope "/api", Tasks1Web do
   #   pipe_through :api

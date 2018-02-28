@@ -17,7 +17,7 @@
     <tr>
       <td><%= task.title %></td>
       <td><%= task.desc %></td>
-       <td><%= task.assignedTo.name %></td>
+      <td><%= task.assignedTo.name %></td>
       <td><%= task.completed %></td>
       <td><%= task.time %></td>
 

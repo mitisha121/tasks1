@@ -10,4 +10,4 @@
 </ul>
 
 
-<span><%= link "Back", to: page_path(@conn, :feed) %></span>
+<span><%= link "Back", to: page_path(@conn, :index) %></span>

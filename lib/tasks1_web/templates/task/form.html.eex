@@ -19,7 +19,8 @@
 
   <div class="form-group">
     <%= label f, :assignedTo_id, class: "control-label" %>
-    <%= text_input f, :assignedTo_id, class: "form-control" %>
+    <!-- select code taken from phoenix documentation -->
+    <%= select f, :assignedTo_id, Enum.map(@managees, &{&1.managee_id, &1.managee_id}), class: "form-control" %>
     <%= error_tag f, :assignedTo_id %>
   </div>
 
