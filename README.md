@@ -1,7 +1,10 @@
 Design:
-A user can only assign himself as manager of other users.
-A user cannot make himself as managee.
-A user can only assign tasks to those he manages
+* A user can only assign himself as manager of other users.
+* A user cannot make himself as managee.
+* A user can only assign tasks to those he manages
+* Time taken field has been removed.
+* The user will see tasks assigned to him
+
 
 
 
